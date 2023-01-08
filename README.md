@@ -1,40 +1,31 @@
 # Open Weather API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Проект создан с помощью утилиты [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Посмотреть готовый проект
 
-In the project directory, you can run:
+можно по ссылке: [Weather API](http://weather.1176783-cv94419.tw1.ru/).
+
+## Доступные скрипты
+
+В папке с проектом в можете использовать следующие команды:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Зпуск проекта в режиме разработки.\
+Открыть [http://localhost:3000](http://localhost:3000) для просмотра проекта в своем браузере.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Страницы перезагружаются автоматически после каждого изменения.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Создается папка `build` для продакшена.\
+Оптимизируются файлы скриптов стилей и создаются бандлы.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Больше информации про деплой [deployment](https://facebook.github.io/create-react-app/docs/deployment).
 
 ### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Внимание: Команда вводится один раз. Один раз использовав `eject`, вы не сможете откатиться назад!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Если коротко, то команда `eject` открывает доступ ко всему, что есть под капотом `react-create-app` на всегда. Настройку проекта можно делать более тонко.
