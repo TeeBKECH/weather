@@ -30,7 +30,7 @@ const App = () => {
 
   useEffect(() => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?appid=5a1b200e8d5558bd10acebc039a10d6a&lat=${coordinates.lat}&lon=${coordinates.lon}`,
+      `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.REACT_APP_API_KEY}&lat=${coordinates.lat}&lon=${coordinates.lon}`,
     )
       .then((res) => res.json())
       .then((data) => {
@@ -44,7 +44,7 @@ const App = () => {
     if (value.length) {
       const valueToLowerCase = value.toLowerCase()
       const cityData = await fetch(
-        `https://api.openweathermap.org/geo/1.0/direct?q=${valueToLowerCase}&limit=1&appid=5a1b200e8d5558bd10acebc039a10d6a`,
+        `https://api.openweathermap.org/geo/1.0/direct?q=${valueToLowerCase}&limit=1&appid=${process.env.REACT_APP_API_KEY}`,
       )
         .then((res) => res.json())
         .then((data) => {
