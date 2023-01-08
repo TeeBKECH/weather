@@ -2,12 +2,35 @@ import React from 'react'
 
 import styles from './widget.module.scss'
 
-import snowImg1 from '../../assets/img/weather/snow1.png'
-import snowImg2 from '../../assets/img/weather/snow2.png'
+import sunCloudsImg from '../../assets/img/weather/sun-clouds.png'
 import sunImg from '../../assets/img/weather/sun.png'
-import rainSnowImg from '../../assets/img/weather/rain-snow.png'
-import cloudsImg from '../../assets/img/weather/clouds1.png'
+import snowImg from '../../assets/img/weather/snow1.png'
+import rainImg from '../../assets/img/weather/mini-rain.png'
+import thunderImg from '../../assets/img/weather/mega-storm.png'
 import locationImg from '../../assets/img/location.png'
+
+const weatherVariants = [
+  {
+    main: 'Clouds',
+    img: sunCloudsImg,
+  },
+  {
+    main: 'Clear',
+    img: sunImg,
+  },
+  {
+    main: 'Snow',
+    img: snowImg,
+  },
+  {
+    main: 'Rain',
+    img: rainImg,
+  },
+  {
+    main: 'Thunderstorm',
+    img: thunderImg,
+  },
+]
 
 const Widget = ({ data, day, month }) => {
   const tempConvert = (temp) => {
@@ -27,6 +50,14 @@ const Widget = ({ data, day, month }) => {
     if (deg > 157.5) return 'S'
     if (deg > 67.5) return 'E'
     return 'N'
+  }
+
+  const chooseImg = (main) => {
+    const weather = weatherVariants.find((el) => el.main === main)
+    if (weather) {
+      return weather.img
+    }
+    return thunderImg
   }
 
   return (
@@ -71,7 +102,7 @@ const Widget = ({ data, day, month }) => {
               <div className={styles.widget_top_right}>
                 <div className={styles.widget_top_img}>
                   <img
-                    src={snowImg1}
+                    src={chooseImg(data.weather[0].main)}
                     alt=''
                   />
                 </div>
@@ -87,7 +118,7 @@ const Widget = ({ data, day, month }) => {
                   <span>Mon</span>
                   <div>
                     <img
-                      src={snowImg1}
+                      src={chooseImg(data.weather[0].main)}
                       alt=''
                     />
                   </div>
@@ -97,7 +128,7 @@ const Widget = ({ data, day, month }) => {
                   <span>Mon</span>
                   <div>
                     <img
-                      src={snowImg2}
+                      src={chooseImg(data.weather[0].main)}
                       alt=''
                     />
                   </div>
@@ -107,7 +138,7 @@ const Widget = ({ data, day, month }) => {
                   <span>Mon</span>
                   <div>
                     <img
-                      src={sunImg}
+                      src={chooseImg(data.weather[0].main)}
                       alt=''
                     />
                   </div>
@@ -117,7 +148,7 @@ const Widget = ({ data, day, month }) => {
                   <span>Mon</span>
                   <div>
                     <img
-                      src={rainSnowImg}
+                      src={chooseImg(data.weather[0].main)}
                       alt=''
                     />
                   </div>
@@ -127,7 +158,7 @@ const Widget = ({ data, day, month }) => {
                   <span>Mon</span>
                   <div>
                     <img
-                      src={cloudsImg}
+                      src={chooseImg(data.weather[0].main)}
                       alt=''
                     />
                   </div>
