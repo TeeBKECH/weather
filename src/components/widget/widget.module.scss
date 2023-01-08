@@ -1,0 +1,170 @@
+.widget {
+  width: 100%;
+  max-width: 700px;
+  border: 2px solid rgba(#fff, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 5px 5px rgba(#000, 7);
+  background: rgba(#000f2e, 0.6);
+  position: relative;
+
+  &_loading {
+    height: 495px;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    filter: blur(15px);
+  }
+
+  &::before {
+    background: rgba(#ff8929, 0.7);
+    bottom: -20px;
+    left: -60px;
+    width: 150px;
+    height: 150px;
+  }
+
+  &::after {
+    background: rgba(#42ff29, 0.5);
+    right: -60px;
+    top: -95px;
+    width: 250px;
+    height: 250px;
+  }
+
+  &_top {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    &_left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &_right {
+    }
+
+    &_city {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+
+      img {
+        width: 25px;
+        filter: invert(1);
+      }
+
+      p {
+        font-size: 22px;
+      }
+    }
+
+    &_day {
+      p {
+        font-size: 30px;
+      }
+    }
+
+    &_hours {
+      font-size: 60px;
+    }
+
+    &_list {
+      list-style: none;
+      margin-top: auto;
+
+      li {
+        padding: 5px 0;
+
+        span {
+          color: #898dff;
+        }
+      }
+    }
+
+    &_img {
+      width: 230px;
+      margin-top: -45px;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &_deg {
+      padding: 10px 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        font-size: 40px;
+        color: #898dff;
+
+        &:nth-child(2) {
+          font-size: 22px;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  &_bottom {
+    padding: 10px 15px;
+    border-top: 2px solid rgba(#fff, 0.3);
+  }
+
+  &_list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      opacity: 0.4;
+      transition: all 0.2s linear;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      span {
+      }
+
+      div {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 100px;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  padding: 5px;
+}
