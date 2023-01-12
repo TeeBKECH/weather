@@ -8,6 +8,7 @@ import snowImg from '../../assets/img/weather/snow1.png'
 import rainImg from '../../assets/img/weather/mini-rain.png'
 import thunderImg from '../../assets/img/weather/mega-storm.png'
 import locationImg from '../../assets/img/location.png'
+import WeatherItem from '../WeatherItem'
 
 const weatherVariants = [
   {
@@ -32,7 +33,9 @@ const weatherVariants = [
   },
 ]
 
-const Widget = ({ data, day, month }) => {
+const cityItems = ['New York', 'Rome', 'London', 'Madrid', 'Minsk']
+
+const Widget = ({ data, day, month, getWeatherByCity }) => {
   const tempConvert = (temp) => {
     const tempC = temp - 273.15
     return tempC.toFixed(1)
@@ -114,56 +117,15 @@ const Widget = ({ data, day, month }) => {
             </div>
             <div className={styles.widget_bottom}>
               <ul className={styles.widget_list}>
-                <li>
-                  <span>Mon</span>
-                  <div>
-                    <img
-                      src={chooseImg(data.weather[0].main)}
-                      alt=''
-                    />
-                  </div>
-                  <span>30&deg; / 25&deg;</span>
-                </li>
-                <li>
-                  <span>Mon</span>
-                  <div>
-                    <img
-                      src={chooseImg(data.weather[0].main)}
-                      alt=''
-                    />
-                  </div>
-                  <span>30&deg; / 25&deg;</span>
-                </li>
-                <li>
-                  <span>Mon</span>
-                  <div>
-                    <img
-                      src={chooseImg(data.weather[0].main)}
-                      alt=''
-                    />
-                  </div>
-                  <span>30&deg; / 25&deg;</span>
-                </li>
-                <li>
-                  <span>Mon</span>
-                  <div>
-                    <img
-                      src={chooseImg(data.weather[0].main)}
-                      alt=''
-                    />
-                  </div>
-                  <span>30&deg; / 25&deg;</span>
-                </li>
-                <li>
-                  <span>Mon</span>
-                  <div>
-                    <img
-                      src={chooseImg(data.weather[0].main)}
-                      alt=''
-                    />
-                  </div>
-                  <span>30&deg; / 25&deg;</span>
-                </li>
+                {cityItems.map((el) => (
+                  <WeatherItem
+                    key={el}
+                    tempConvert={tempConvert}
+                    weatherVariants={weatherVariants}
+                    city={el}
+                    chooseImg={chooseImg}
+                  />
+                ))}
               </ul>
             </div>
           </div>

@@ -36,7 +36,6 @@ const App = () => {
       .then((data) => {
         setData(data)
         setValue('')
-        console.log(data)
       })
   }, [coordinates])
 
